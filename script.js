@@ -1,7 +1,6 @@
 const scrollBtn = document.getElementById("scrollToTopBtn");
 
 document.addEventListener("DOMContentLoaded", () => {
-  // YILDIZ EKLEME KODU
   const starsContainer = document.querySelector(".hero-text");
   const colors = ["star-pink", "star-gold", "star-red"];
   const starCount = 100;
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // DEVAMINI OKU
   const readMoreButtons = document.querySelectorAll(".read-more");
   let openContent = null;
 
@@ -67,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // MENÜ KODU
   const menuIcon = document.querySelector(".menu-icon");
   const navUl = document.querySelector(".blog-menu");
   const body = document.body;
@@ -88,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// YUKARI DÖN BUTONU İŞLEVİ
 window.addEventListener("scroll", () => {
   if (window.scrollY > 300) {
     scrollBtn.style.display = "flex";
@@ -101,17 +97,6 @@ scrollBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// PRELOADER
-window.addEventListener("load", function () {
-  const preloader = document.getElementById("preloader-fashion");
-  if (preloader) {
-    setTimeout(() => {
-      preloader.classList.add("hidden");
-      document.body.style.overflow = "";
-    }, 3000);
-  }
-});
-
 window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader-fashion");
   setTimeout(function () {
@@ -122,7 +107,7 @@ window.addEventListener("load", function () {
         history.replaceState(
           "",
           document.title,
-          window.location.pathname + window.location.search
+          window.location.pathname + window.location.search,
         );
       }
       document.body.style.overflow = "";
