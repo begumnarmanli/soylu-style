@@ -5,26 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const colors = ["star-pink", "star-gold", "star-red"];
   const starCount = 100;
 
+const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < starCount; i++) {
     const star = document.createElement("div");
     star.textContent = "★";
+    star.className = `star star${i + 1} ${colors[Math.floor(Math.random() * colors.length)]}`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 3}s`;
+    fragment.appendChild(star);
+  }
 
-    const className = `star star${i + 1} ${
-      colors[Math.floor(Math.random() * colors.length)]
-    }`;
-    star.className = className;
-
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    star.style.left = `${x}%`;
-    star.style.top = `${y}%`;
-
-    const delay = Math.random() * 3;
-    star.style.animationDelay = `${delay}s`;
-
-    if (starsContainer) {
-      starsContainer.appendChild(star);
-    }
+  if (starsContainer) {
+    starsContainer.appendChild(fragment);
   }
 
   const readMoreButtons = document.querySelectorAll(".read-more");
